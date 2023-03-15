@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pong Game</title>
+    
     <style>
         canvas {
             display: block;
@@ -13,7 +14,36 @@
     </style>
 </head>
 <body>
-    <canvas id="pong" width="800" height="400"></canvas>
+    <div id="app">
+        <div class="container-fluid">
+            <div class="row text-center my-4">
+                <div class="col">
+                    <h1>GitHub : gregoiremahon</h1>
+                    <button type="button" class="btn btn-link">github.com/gregoiremahon</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <canvas id="pong" width="800" height="400"></canvas>
+                </div>
+            </div>
+            <div class="row text-center my-4">
+                <div class="col">
+                    <h2>Jeu Pong</h2>
+                    <p>Touches de contrôle :</p>
+                    <p>Palette gauche : W (monter), S (descendre)</p>
+                    <p>Palette droite : Flèche haut (monter), Flèche bas (descendre)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Pong.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script src="pong.js"></script>
+    <!-- Import Vue.js & Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4pldoTfJsrF8wdvZ" crossorigin="anonymous">
+    
+    
 </body>
 </html>
