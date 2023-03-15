@@ -3,7 +3,7 @@ const app = Vue.createApp({
 
     data() {
         return {
-          github_link: "github.com/gregoiremahon"
+          github_link: "https://github.com/gregoiremahon"
         }
     },
 
@@ -76,7 +76,7 @@ const app = Vue.createApp({
             }
 
             function movePaddles() {
-                console.log(leftPaddle.y, canvas.height)
+                //console.log(leftPaddle.y, canvas.height)
                 if (leftPaddle.y + leftPaddle.dy >= 0 && leftPaddle.y + leftPaddle.dy + leftPaddle.height <= canvas.height) {
                 leftPaddle.y += leftPaddle.dy;
                 }
