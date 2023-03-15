@@ -1,3 +1,4 @@
+src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/toasty.js"
 const app = Vue.createApp({
 
     data() {
@@ -18,7 +19,7 @@ const app = Vue.createApp({
         initPongGame() {
             const canvas = document.getElementById("pong");
             const ctx = canvas.getContext("2d");
-            
+            var mySound = new sound("bounce.wav");
             const paddleWidth = 10;
             const paddleHeight = 100;
             const ballRadius = 8;
@@ -46,6 +47,21 @@ const app = Vue.createApp({
             dx: 3,
             dy: 3,
             };
+
+            function sound(src) {
+                this.sound = document.createElement("audio");
+                this.sound.src = src;
+                this.sound.setAttribute("preload", "auto");
+                this.sound.setAttribute("controls", "none");
+                this.sound.style.display = "none";
+                document.body.appendChild(this.sound);
+                this.play = function(){
+                  this.sound.play();
+                }
+                this.stop = function(){
+                  this.sound.pause();
+                }
+            }
 
             function drawPaddle(paddle) {
             ctx.fillStyle = "green";
@@ -89,6 +105,7 @@ const app = Vue.createApp({
                 ball.y >= rightPaddle.y &&
                 ball.y <= rightPaddle.y + rightPaddle.height)
             ) {
+                mySound.play();
                 ball.dx *= -1;
             }
 
